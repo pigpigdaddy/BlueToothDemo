@@ -11,6 +11,8 @@
 
 @interface ViewController : UIViewController<CBPeripheralManagerDelegate>
 
-@property (nonatomic, strong) CBPeripheralManager *manager;
+@property (nonatomic, strong) CBPeripheralManager *peripheralManager;
+@property (nonatomic, strong) CBMutableCharacteristic *customCharacteristic;
+@property (nonatomic, strong) CBMutableService *customService;
 
 @end
