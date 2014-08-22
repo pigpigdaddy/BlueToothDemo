@@ -2,7 +2,7 @@
 //  ViewController.m
 //  BlueToothDemo
 //
-//  Created by 林峰 on 14-8-20.
+//  Created by pigpigdaddy on 14-8-20.
 //  Copyright (c) 2014年 pigpigdaddy. All rights reserved.
 //
 
@@ -99,7 +99,7 @@ static NSString * const kCharacteristicUUID = @"F5C0119C-84A6-4B53-9DF4-11891921
 - (void)setupService{
     // 创建一个特征
     CBUUID *characteristicUUID = [CBUUID UUIDWithString:kCharacteristicUUID];
-    self.customCharacteristic = [[CBMutableCharacteristic alloc] initWithType:characteristicUUID properties:CBCharacteristicPropertyNotify value:nil permissions:CBAttributePermissionsReadable];
+    self.customCharacteristic = [[CBMutableCharacteristic alloc] initWithType:characteristicUUID properties:CBCharacteristicPropertyNotify value:nil permissions:CBAttributePermissionsWriteable];
     
     // 创建一个服务
     CBUUID *serviceUUID = [CBUUID UUIDWithString:kServiceUUID];
@@ -163,11 +163,5 @@ static NSString * const kCharacteristicUUID = @"F5C0119C-84A6-4B53-9DF4-11891921
     self.btnLast.enabled = NO;
     self.labelStatus.text = @"正在等待中央连接......";
 }
-
-- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request
-{
-    
-}
-
 
 @end
